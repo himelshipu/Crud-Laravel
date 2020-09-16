@@ -3,6 +3,20 @@
 @push('css')
 <style>
 
+     @font-face {
+            font-family:'bariolregular';
+            src: url('/font/bariol_regular-webfont.ttf') format('ttf');
+            font-style: normal;
+            font-weight: bold;
+        }
+
+html,body{
+
+
+  height: 100%;
+  margin: 0;
+}
+
     .formarea h5{
       color:#0D5245;
 
@@ -11,9 +25,11 @@
 
     .formarea{
       width: 60%;
+      height: 100%;
+      overflow-y: auto;
       background-color: white;
       border: 1px solid #C0C0C0;
-       font-family: sans-serif;
+      font-family: sans-serif;
 
     }
 
@@ -30,7 +46,7 @@
 
 
 .card-panel {
-  box-shadow: rgba(0, 0, 0, 0.1) 0 5px 40px, rgba(0, 0, 0, 0.1) 0 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 40px, rgba(0, 0, 0, 0.3) 0 5px 10px;
   border-bottom: 10px solid transparent;
   transition: box-shadow 0.25s;
   padding: 20px;
@@ -50,8 +66,7 @@
 
 .min-container .card-panel form .fa {
   top: 13px;
-  left:1rem;
-  
+  left:1rem; 
   color: #7F8084;
 }
 
@@ -83,6 +98,35 @@
 .min-container {
   margin: 0 auto;
 }
+
+
+
+.table-style .today {background: #2A3F54; color: #ffffff;}
+.table-style th:nth-of-type(7),td:nth-of-type(7) {color: blue;}
+.table-style th:nth-of-type(1),td:nth-of-type(1) {color: red;}
+.table-style tr:first-child th{background-color:#F6F6F6; text-align:center; font-size: 15px;}
+
+/*clock*/
+
+
+ 
+
+/*endclock*/
+.profile table{
+border:1px solid #979797;
+}
+ .profile th{
+background-color: #E4E4E4;
+border:1px solid #979797;
+}
+.profile tr{
+background-color: #F5F5F5;
+}
+
+.proflie ul{
+  list-style-type: none;
+}
+
 </style>
 
 @endpush
@@ -92,7 +136,7 @@
 
 
 
-<div class="container shadow p-3 mb-5  rounded formarea clearfix">
+<!-- <div class="container shadow p-3 mb-5  rounded formarea clearfix">
   
   <br>
   <h5 >Registration</h5>
@@ -137,10 +181,10 @@
 
       <div class="col-4"> 
           <select class="form-control" id="gender">
-            <option></option>
-            <option>male</option>
-            <option>female</option>
-            <option>other</option>
+            <option disabled selected hidden>Select one</option>
+            <option value="male">male</option>
+            <option value="male">female</option>
+            <option value="male">other</option>
       
           </select>
         </div>
@@ -158,7 +202,7 @@
       <div class="col-2 align-items-center"> country </div>
         <div class="col-4"> 
           <select class="form-control" id="country">
-            <option></option>
+          <option disabled selected hidden>Select one</option>
             <option>Bangladesh</option>
             <option>Pakistan</option>
             <option>India</option>
@@ -175,7 +219,7 @@
          <div class="col-2 align-items-center"> city </div>
         <div class="col-4"> 
           <select class="form-control" id="city">
-           <option></option>
+           <option disabled selected hidden>Select one</option>
             <option>Dhaka</option>
             <option>Dhaka</option>
             <option>Dhaka</option>
@@ -188,10 +232,10 @@
         <div class="col-4"> 
           <select class="form-control" id="region">
             <option></option>
-            <option>Dhanmondi</option>
-            <option>Dhanmondi</option>
-            <option>Dhanmondi</option>
-            <option>Dhanmondi</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Badda">Badda</option>
+            <option value="Mirpur">Mirpur</option>
+           
           </select>
         </div>
     </div>  <br>
@@ -213,39 +257,54 @@
 
         <div class="col-9"> 
           <div class="checkbox">
-      <label><input type="checkbox" value=""> English </label>
-      <label><input type="checkbox" value=""> English </label>
-      <label><input type="checkbox" value=""> English </label>
+      <label><input type="checkbox" value="english"> English </label>
+      <label><input type="checkbox" value="french"> French </label>
+      <label><input type="checkbox" value="Portugese"> Portugese </label>
     </div>
         </div>
 
   </div><br>
 
- 
+ <div class="row">
+    
+          <div class="col-2 align-items-center">picture</div>
+
+        <div class="col-4"> 
+           
+             <input type="file" class="form-control" id="img" name="img" accept="image/*" style="background-color: none;border:none;">
+        </div>
+        <div class="col-6"> </div>
+
+  </div><br>
  
       <button type="submit" class="btn float-right">Register</button>
 
 
 
   </form>
-</div>
+</div> -->
 
 
 <hr>
 
-<section class="container min-container py-md-5 mt-4">
+
+
+
+<!-- login form -->
+
+<!-- <div class="container min-container py-md-5 mt-4">
   <div class="card-panel p-sm-5 position-relative">
            <img src="" alt="Cool Imam Logo">
-            <span style= "color: #0D5245; text-align: center; font-family: impact; font-size: 1.5rem; font-weight: bold; display: block;">COOL IMAM</h2>
+            <h2 style= "color: #0D5245; text-align: center; font-family: impact; font-size: 1.5rem; font-weight: bold; display: block;">COOL IMAM</h2>
     <form id="loginForm" class="mt-5">
   
       <div class="form-group position-relative">
          <i class="fa fa-user fa-lg position-absolute"> | </i>
-        <!-- <label for="email" class="sr-only">Email</label> -->
+       
         <input type="email" class="form-control input-lg rounded-0 shadow" id="email" class="email" name="email"  placeholder="Email Address" required="" >
        
         </div>
-     <!--  <label for="password" class="pull-left sr-only">Password</label> -->
+  
       <div class="position-relative">
         <i class="fa fa-key fa-lg position-absolute"> | </i>
         <input class="form-control input-lg rounded-0 shadow" id="password" class="password" name="password" type="password" placeholder="Password" required="">
@@ -258,12 +317,145 @@
     </form>
 
   </div>
-</section>
-
-
-<div>
-  abcd
 </div>
+ -->
+<!-- login form -->
+
+
+
+<!-- 
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      
+
+
+    <div class="card profile" >
+        <div class="row justify-content-center" style="margin-top: 20px;">
+          <div class="col-4">
+            <ul style="list-style-type: none;">
+              <li><h3 class="bold">Abdel Al Kareem</h3></li>
+              <li>Member Since <span>20-april-2020</span></li>
+              <li>Mobile: <span>+234 1 298 </span></li>
+              <li>Email: <span>rashkareem@gmail.com </span></li>
+              <li>Address: <span>2,Hakeem ontiri street,offlago,palaway,nigeria</span></li>
+              <li>Preferred Language <span>French,English</span></li>
+            </ul>
+          </div>
+          <div class="col-4" style="list-style-type: none;">
+            <ul  style="margin-top: 30%;">
+              <li>Date of Birth : <span>20-april-2020</span></li>
+              <li>Gender: <span>Male</span></li>
+            </ul>
+          </div>
+          <div class="col-2">
+             <img src="" alt="img not found" class="img-fluid" style="max-height: 60px;max-width: 60px">
+          </div>
+        </div>
+ -->
+
+               <!--  Apply table -->
+        <!--   <div class="row justify-content-center">
+
+            <div class="col-10">
+                <caption>Courses Applied </caption>
+                 <table class="table table-bordered enroll_table">
+              
+        <thead class="">
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>Enroll Date</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Binding Divides to Strengthen Communities</td>
+            <td>12/dec/2129</td>
+            <td>10/dec/2019</td>
+            <td>59%</td>
+          </tr>
+           <tr>
+            <td>1</td>
+            <td>Binding Divides to Strengthen Communities</td>
+            <td>12/dec/2129</td>
+            <td>10/dec/2019</td>
+            <td>59%</td>
+          </tr>
+            <tr>
+            <td>1</td>
+            <td>Binding Divides to Strengthen Communities</td>
+            <td>12/dec/2129</td>
+            <td>10/dec/2019</td>
+            <td>59%</td>
+          </tr>
+        </tbody>
+      </table>
+            </div>
+          </div>
+          <br>
+ -->
+
+
+    <!--  Enrolled_table -->
+<!-- 
+            <div class="row justify-content-center">
+            <div class="col-10">
+              <caption>Courses Enrolled </caption>
+                 <table class="table table-bordered enroll_table">
+        <thead class="">
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>Enroll Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Binding Divides to Strengthen Communities</td>
+            <td>12/dec/2129</td>
+            <td>10/dec/2019</td>
+            <td>>Enrolled</td>
+          </tr>
+           <tr>
+            <td>1</td>
+            <td>Binding Divides to Strengthen Communities</td>
+            <td>12/dec/2129</td>
+            <td>10/dec/2019</td>
+            <td>>Enrolled</td>
+          </tr>
+            <tr>
+            <td>1</td>
+            <td>Binding Divides to Strengthen Communities</td>
+            <td>12/dec/2129</td>
+            <td>10/dec/2019</td>
+            <td>Enrolled</td>
+          </tr>
+        </tbody>
+      </table>
+            </div>
+          </div>
+       -->
+
+    <!--  Enrolled_table -->
+   </div>
+
+
+ 
+
+    </div>
+  </div>
+</div>
+
+
+
+abc
 
 
 

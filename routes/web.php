@@ -33,4 +33,3 @@ Route::post('/student/store', 'StudentController@store')->name('student.store');
 
 
 
-Route::get('/home/{name}/{age}', 'HomeController@index');
