@@ -127,6 +127,51 @@ background-color: #F5F5F5;
   list-style-type: none;
 }
 
+
+
+
+
+
+/*timer*/
+/* Sets the containers height and width */
+.base-timer {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+
+.base-timer__label {
+  position: absolute;
+  
+  /* Size should match the parent container */
+  width: 300px;
+  height: 300px;
+  
+  /* Keep the label aligned to the top */
+  top: 0;
+  
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 48px;
+}
+
 </style>
 
 @endpush
@@ -440,8 +485,8 @@ background-color: #F5F5F5;
         </tbody>
       </table>
             </div>
-          </div>
-       -->
+          </div> -->
+      
 
     <!--  Enrolled_table -->
    </div>
@@ -452,12 +497,6 @@ background-color: #F5F5F5;
     </div>
   </div>
 </div>
-
-
-
-abc
-
-
 
 
 
